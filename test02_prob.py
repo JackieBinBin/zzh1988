@@ -4,8 +4,8 @@
 # The starter code only deals with the case when x is even
 # you will need to handle the case when x is odd in a similar manner
 
-#x = 1; y = 2; z = 3; #base test case
-x = -10; y = 2; z = -7 #more interesting case to test
+x = 10; y = 9; z = 9; #base test case
+# x = -10; y = 2; z = -7 #more interesting case to test
 #inline commands can be separated by semi-colons
 
 print(f'x = {x}, y = {y}, z = {z}') #print out the values of x, y, and z
@@ -20,7 +20,7 @@ if x%2 == 0:  # x even
         if z%2 != 0: # z odd
             if y > z:
                 print(f'y = {y} largest odd')
-            else:
+            else: # 这里如果y z 相等，那么y z 都是最大odd 才对，这里逻辑有问题
                 print(f'z = {z} is largest odd')
         else: # z even
             print(f'y = {y} is largest odd')
