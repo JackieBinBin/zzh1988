@@ -7,4 +7,7 @@ for i in range(2,101):
     else:
         prime_num.append(i)
 
+# 上述 for ...else 循环体执行逻辑为：
+# 在for循环完整！！完成！！后才执行else；如果中途从break跳出，则连else一起跳出
+
 print(prime_num)
