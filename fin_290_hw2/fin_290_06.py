@@ -5,8 +5,7 @@ import random
 zzh = random.randint(1,100)
 
 guess_num = 0
-# 总共5次尝试机会
-attempts = 5
+attempts = 5 # 总共5次尝试机会
 
 print(f'Please guess the number in 1-100 interval~~')
 
@@ -21,7 +20,7 @@ while int(guess_num) !=zzh and attempts !=0:
         print(f'Please input a number,not any other type of things: ')
         guess_num = 0
         attempts -= 1
-        continue
+        continue # 终止本次循环，进入下一次循环验证
     else:
         if int(guess_num) > zzh:
             print('oops,Bigger yo~~')
