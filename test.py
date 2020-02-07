@@ -1,10 +1,22 @@
-N=input('please enter a number')
-if N<='1' or not N.isdigit():  #  isdigit() 方法检测字符串是否只由数字组成
-    print('it is not a1 prime number')
-else:
-    for i in range(2, int(N)+1):
-        for j in range (2,int(N)):
-            if i % j == 0:
-                    print(f' {i} it is not a2 prime number')
-            else:
-                    print(f' {i} it is a prime number')
+N = input('please enter a number: ')
+while True:
+    try:
+        N = int(N)
+        if N <= 1:
+                print('it is not a prime number')
+        else:
+            for i in range(2, N):
+                if N % i == 0:
+                    print('it is not a prime number')
+                    break
+                else:
+                    print(i)
+                    for j in range(2,i):
+                        if N % i==0:
+                            break
+                        else:
+                            print(j)
+
+        break
+    except:
+        print("you did not enter a prime number")
