@@ -34,18 +34,21 @@ with open('C:\\Users\\Gary\\Desktop\\zzh\\mbox-short.txt') as f:
 # 根据抓取的内容排序
 
 # Mbox
-sorted_counts_mbox = sorted(email_count_mbox.items(), key=lambda x: x[1], reverse=True)
+sorted_counts_mbox = dict(sorted(email_count_mbox.items(), key=lambda x: x[1], reverse=True))
 
 # Mbox—short
-sorted_counts_mbox_short = sorted(email_count_mbox_short.items(), key=lambda x: x[1], reverse=True)
+sorted_counts_mbox_short = dict(sorted(email_count_mbox_short.items(), key=lambda x: x[1], reverse=True))
 
-# print(sorted_counts_mbox)
-# print(sorted_counts_mbox_short)
+print(sorted_counts_mbox_short.values())
 
 #  build a histogram using a dictionary to count how many messages
 # have come from each email address
 
 import matplotlib.pyplot as plt
 
-plt.bar(range(len(sorted_counts_mbox)),sorted_counts_mbox)
+plt.bar(range(len(sorted_counts_mbox_short)), sorted_counts_mbox_short.values(), color='rgb', tick_label=sorted_counts_mbox_short.keys())
+# plt.bar(range(len(sorted_counts_mbox_short)), sorted_counts_mbox_short.values(), color='rgb', tick_label=A)
+
+
+# plt.bar(range(len(sorted_counts_mbox)),sorted_counts_mbox)
 plt.show()
