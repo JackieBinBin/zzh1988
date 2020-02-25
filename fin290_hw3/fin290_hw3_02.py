@@ -24,10 +24,16 @@ with open('C:\\Users\\Gary\\Desktop\\zzh\\dracula_words.txt','w+') as f:
 # Generate a list called ‘sorted counts’ that contains the value and key pairs as tuples
 # that are sorted in descending order based on the frequencies of the words.
 
-sorted_counts = sorted(word_count.items(), key=lambda x: x[1], reverse=True)
+word_count = {val:key for key,val in word_count.items()}
+
+sorted_counts = sorted(word_count.items(), key=lambda x: x[0], reverse=True)
+
+# print(sorted_counts)
 
 # Output the top 10 most frequently occurring words
 
-for k, v in sorted_counts[:10]:
-    print(k, v)
+# for k, v in sorted_counts[:10]:
+    # print(k, v)
 
+for value in sorted_counts[:10]:
+    print(value)
