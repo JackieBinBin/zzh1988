@@ -46,9 +46,6 @@ print(sorted_counts_mbox_short.values())
 
 import matplotlib.pyplot as plt
 
-plt.bar(range(len(sorted_counts_mbox_short)), sorted_counts_mbox_short.values(), color='rgb', tick_label=sorted_counts_mbox_short.keys())
-# plt.bar(range(len(sorted_counts_mbox_short)), sorted_counts_mbox_short.values(), color='rgb', tick_label=A)
-
-
-# plt.bar(range(len(sorted_counts_mbox)),sorted_counts_mbox)
+plt.bar(range(len(sorted_counts_mbox_short)), sorted_counts_mbox_short.values(),
+        color='rgb', tick_label=sorted_counts_mbox_short.keys())
 plt.show()
