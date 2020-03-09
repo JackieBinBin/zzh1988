@@ -2,6 +2,10 @@ import pandas
 import requests
 from bs4 import BeautifulSoup
 
+# 根据题目要求，需要先安装如下2个包：
+# pip install beautifulsoup4
+# pip install lxml
+
 
 
 def get_coinmarketcap_his_info(url,start_date,end_date):
