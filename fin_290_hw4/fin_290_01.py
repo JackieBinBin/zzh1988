@@ -2,11 +2,6 @@ import pandas
 import requests
 from bs4 import BeautifulSoup
 
-# 根据题目要求，需要先安装如下1个包：
-# pip install beautifulsoup4
-
-
-
 def get_coinmarketcap_his_info(url,start_date,end_date):
 
     # 通过requests 请求页面获取对应文档
@@ -22,7 +17,7 @@ def get_coinmarketcap_his_info(url,start_date,end_date):
         # 通过指定页面元素获取指定标签的内容
         for item in items.select_one("td.cmc-table__cell").find_next_siblings():
             value_list.append(item.get_text())
-            new_dict = dict(zip(['open', 'high', 'low','close','volume','marketcap'],value_list))
+        new_dict = dict(zip(['open', 'high', 'low','close','volume','marketcap'],value_list))
         # 生成
         yield new_dict['close'],new_dict['volume'],new_dict['marketcap']
         value_list = []
@@ -53,4 +48,4 @@ if __name__ == '__main__':
             print(f'Time range {times[0]} - {times[1]}')
             df = (elem for elem in get_coinmarketcap_his_info(url_list[url],times[0],times[1]))
             df = pandas.DataFrame(df,columns=['Close','Volume','Market Cap'])
-            print(df)
+            # print(df)
